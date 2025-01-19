@@ -1,0 +1,3 @@
+[submodule "ros2_tcp_can_gateway/can2tcp"]
+	path = ros2_tcp_can_gateway/can2tcp
+	url = https://github.com/belovictor/can2tcp.git
