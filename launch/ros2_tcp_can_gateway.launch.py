@@ -23,12 +23,17 @@ def generate_launch_description():
             default_value='20001',
             description='Default can gateeeway port'
         ),
+        DeclareLaunchArgument(
+            'node_name',
+            default_value='ros2_tcp_can_gateway_node',
+            description='Default node name'
+        ),
         Node(
             output='screen',
             emulate_tty=True,
             package='ros2_tcp_can_gateway',
             executable='ros2_tcp_can_gateway_node',
-            name='ros2_tcp_can_gateway_node',
+            name=LaunchConfiguration('node_name'),
             parameters=[
                 {'can_interface': LaunchConfiguration('can_interface')},
                 {'gateway_host': LaunchConfiguration('gateway_host')},
